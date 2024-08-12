@@ -1,0 +1,279 @@
+/* Estilos globales */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333333; /* Color de texto por defecto */
+    background-color: #0E79B2; /* Fondo inicial */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves para modo oscuro/claro */
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #333333; /* Fondo oscuro */
+    color: #FFFFFF; /* Texto claro */
+}
+
+.dark-mode header, .dark-mode #about, .dark-mode #projects, .dark-mode #contact, .dark-mode footer {
+    background-color: #444444; /* Fondo oscuro para secciones */
+    color: #FFFFFF; /* Texto claro */
+}
+
+.dark-mode .cta-button {
+    background-color: #555555; /* Botones más oscuros */
+}
+
+.dark-mode .cta-button:hover {
+    background-color: #666666; /* Hover en botones más claro */
+}
+
+.dark-mode .project-card {
+    background-color: #555555; /* Fondo oscuro en tarjetas de proyectos */
+    border-color: #666666; /* Bordes más claros */
+}
+
+.dark-mode footer {
+    background-color: #444444; /* Fondo oscuro en pie de página */
+}
+
+/* Tipografía de Títulos */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #1E90FF;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* Enlaces y Botones */
+a {
+    color: #1E90FF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #104E8B;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 10px 5px;
+    background-color: #1E90FF;
+    color: #FFFFFF;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #104E8B;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #F0F8FF;
+    color: #333333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+/* Botón para cambiar modo claro/oscuro */
+.theme-toggle {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1E90FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: #104E8B;
+}
+
+/* Margen sobre secciones */
+section {
+    padding: 60px 20px;
+    margin-bottom: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Sección Sobre Mí */
+#about {
+    padding: 50px 20px;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+
+/* Sección Proyectos */
+#projects {
+    padding: 50px 20px;
+    background-color: #F7F7F7;
+    color: #333333;
+}
+
+.project-card {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.project-card p {
+    margin-top: 10px;
+    color: #555555;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1E90FF;
+    text-decoration: underline;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección Precios de Criptomonedas */
+#crypto-prices {
+    padding: 50px 20px;
+    background-color: #FFFFFF;
+    color: #333333;
+    text-align: center;
+}
+
+/* Sección Donaciones */
+#donations {
+    padding: 50px 20px;
+    background-color: #F0F8FF;
+    color: #333333;
+    text-align: center;
+}
+
+/* Sección Contacto */
+#contact {
+    padding: 50px 20px;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #1E90FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #104E8B;
+}
+
+/* Pie de Página */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #F0F8FF;
+    color: #333333;
+}
+
+footer nav a {
+    margin: 0 10px;
+    color: #1E90FF;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    color: #1E90FF;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #104E8B;
+}
+
+/* Responsive moviles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    form input, form textarea {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+
+

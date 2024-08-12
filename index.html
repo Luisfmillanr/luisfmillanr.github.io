@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Fernando Millan Rivera - Programador</title>
+    <!-- Fuentes de Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" href="/Mi_Proyecto_Backend/public/style.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Soy Luis Fernando Millan Rivera, un programador apasionado por crear soluciones innovadoras.</h1>
+        <p>Descubre mis proyectos y cómo puedo ayudarte a transformar ideas en realidad.</p>
+        <a href="#projects" id="theme-toggle" class="theme-toggle">Explora mis proyectos</a>
+        <a href="#contact" id="theme-toggle" class="theme-toggle">Contáctame</a>
+        <button id="theme-toggle" class="theme-toggle">Cambiar a modo oscuro</button>
+    </header>
+
+    <!-- Sobre Mí -->
+    <section id="about">
+        <h2>Sobre Mí</h2>
+        <p>Desde joven, siempre he sentido una gran curiosidad por la tecnología y la programación. Mi viaje comenzó con la reparación de equipos y trabajos como soporte e instalación de redes. Empecé a explorar sistemas operativos libres y, desde entonces, he creado soluciones que impactan positivamente en la vida de las personas. Me motiva la constante búsqueda de nuevas formas de resolver problemas y hacer la tecnología más accesible para todos.</p>
+        <h3>Habilidades</h3>
+        <p>Domino tecnologías como Java, Python, HTML, CSS, y JavaScript. Tengo experiencia en desarrollo de aplicaciones web, análisis de datos, y optimización de procesos mediante automatización. Además, cuento con un sólido conocimiento en sistemas operativos avanzados, redes y tecnología.</p>
+        <h3>Experiencia</h3>
+        <p>Mi objetivo es seguir creciendo como profesional, aportando mis conocimientos y habilidades en proyectos que realmente marquen la diferencia. Quiero ser parte de soluciones innovadoras que mejoren la calidad de vida y faciliten el acceso a la tecnología.</p>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="projects">
+        <h2>Proyectos</h2>
+        <div class="project-card">
+            <img src="conversor-monedas.png" alt="Conversor de Monedas">
+            <h3>Conversor de Monedas</h3>
+            <p>Este proyecto nació de la necesidad de simplificar el proceso de conversión de divisas para usuarios de todo el mundo. Utilicé Java y Maven para desarrollar una aplicación robusta que consume una API de tasas de cambio en tiempo real, brindando resultados precisos y rápidos.</p>
+            <a href="conversor-detalles.html">Ver más</a>
+        </div>
+        <div class="project-card">
+            <img src="gestion-inventarios.png" alt="Sistema de Gestión de Inventarios">
+            <h3>Sistema de Gestión de Inventarios</h3>
+            <p>Diseñado para pequeñas empresas, este sistema fue creado con Python y SQLite para gestionar y optimizar la administración de inventarios. El sistema reduce significativamente el tiempo y el esfuerzo necesarios para controlar el stock y realizar pedidos.</p>
+            <a href="inventarios-detalles.html">Ver más</a>
+        </div>
+        <!-- Más proyectos -->
+    </section>
+
+    <!-- Precios de Criptomonedas -->
+    <section id="crypto-prices">
+        <h2>Precios de Criptomonedas</h2>
+        <p>Bitcoin: <span id="bitcoin-price">Cargando...</span></p>
+        <p>Ethereum: <span id="ethereum-price">Cargando...</span></p>
+    </section>
+    
+    <!-- Donaciones -->
+    <section id="donations">
+        <h2>Apóyame</h2>
+        <p>Si te gusta mi trabajo, considera apoyarme con una donación.</p>
+        <a href="https://www.paypal.com/donate?hosted_button_id=XXXXX" class="cta-button">Donar con PayPal</a>
+        <a href="https://www.coinbase.com/join/XXXXX" class="cta-button">Donar con Criptomonedas</a>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact">
+        <h2>Contacto</h2>
+        <p>Estoy disponible para colaborar en nuevos proyectos. Completa el formulario a continuación para ponerte en contacto conmigo. Estaré encantado de escuchar tus ideas y explorar cómo podemos trabajar juntos.</p>
+        <form action="#" method="post">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Asunto:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>&copy; 2024 Luis Fernando Millan Rivera. Todos los derechos reservados.</p>
+        <nav>
+            <a href="#about">Sobre Mí</a> | 
+            <a href="#projects">Proyectos</a> | 
+            <a href="#contact">Contacto</a>
+        </nav>
+        <div class="footer-social">
+            <a href="https://twitter.com/tuusuario" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/tuusuario" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/tuusuario" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+    
+    <!-- Archivo JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
