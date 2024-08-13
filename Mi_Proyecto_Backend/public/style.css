@@ -22,10 +22,12 @@ body.dark-mode {
 
 .dark-mode .cta-button {
     background-color: #555555; /* Botones más oscuros */
+    color: #FFFFFF;
 }
 
 .dark-mode .cta-button:hover {
-    background-color: #666666; /* Hover en botones más claro */
+    background-color: #777777; /* Hover en botones más claro */
+    color: #FFFFFF;
 }
 
 .dark-mode .project-card {
@@ -76,6 +78,9 @@ a:hover {
     color: #FFFFFF;
     border-radius: 5px;
     text-align: center;
+    box-sizing: border-box; /* Para asegurar tamaños consistentes */
+    min-width: 200px; /* Asegurar que los botones tengan el mismo ancho mínimo */
+    text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -83,6 +88,7 @@ a:hover {
 .cta-button:hover {
     background-color: #104E8B;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    color: #FFFFFF;
 }
 
 /* Encabezado */
@@ -109,10 +115,12 @@ header p {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
+    min-width: 200px; /* Asegurar que el botón sea consistente en tamaño */
 }
 
 .theme-toggle:hover {
     background-color: #104E8B;
+    color: #FFFFFF;
 }
 
 /* Margen sobre secciones */
@@ -274,6 +282,7 @@ footer nav a {
         font-size: 1rem;
     }
 }
+
 
 
 

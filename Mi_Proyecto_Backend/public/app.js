@@ -4,7 +4,7 @@ console.log("Bienvenido a mi página personal");
 // Función para cambiar el tema entre claro y oscuro
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
-    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
     
     if (document.body.classList.contains('dark-mode')) {
         themeToggleBtn.textContent = 'Cambiar a modo claro';
@@ -33,7 +33,7 @@ function validateEmail(email) {
 // Evento DOMContentLoaded para ejecutar el código cuando el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", function() {
     // Inicialización del modo oscuro/claro
-    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
     themeToggleBtn.addEventListener('click', toggleTheme);
 
     // Cargar precios de criptomonedas al cargar la página
@@ -67,5 +67,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Actualizar los precios de criptomonedas cada 60 segundos
     setInterval(fetchCryptoPrices, 60000);
 });
+
 
 
