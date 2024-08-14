@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora los proyectos de Luis Fernando Millan Rivera, desarrollador con experiencia en Java, Python, y otras tecnologías.">
+    <title>Proyectos - Luis Fernando Millan Rivera</title>
+
+    <!-- Fuentes de Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" href="/Mi_Proyecto_Backend/public/style.css">
+    <link rel="icon" href="/Mi_Proyecto_Backend/public/images/menulines.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar" id="main-navigation">
+        <div class="navbar-container">
+            <a href="index.html" class="brand-logo">Luis Fernando Millan Rivera</a>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navigation">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-list">
+                <li><a href="index.html#about">Sobre Mí</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle">Modo Oscuro</button>
+        </div>
+    </nav>
+
+    <!-- Sección Proyectos -->
+    <section id="projects">
+        <h2>Proyectos</h2>
+        <div class="project-card">
+            <img src="conversor-monedas.png" alt="Captura de pantalla del Conversor de Monedas">
+            <h3>Conversor de Monedas</h3>
+            <p>Este proyecto nació de la necesidad de simplificar el proceso de conversión de divisas para usuarios de todo el mundo. Utilicé Java y Maven para desarrollar una aplicación robusta que consume una API de tasas de cambio en tiempo real, brindando resultados precisos y rápidos.</p>
+            <a href="conversor-detalles.html" class="cta-button" aria-label="Ver más detalles del proyecto Conversor de Monedas">Ver más</a>
+        </div>
+        <div class="project-card">
+            <img src="gestion-inventarios.png" alt="Captura de pantalla del Sistema de Gestión de Inventarios">
+            <h3>Sistema de Gestión de Inventarios</h3>
+            <p>Diseñado para pequeñas empresas, este sistema fue creado con Python y SQLite para gestionar y optimizar la administración de inventarios. El sistema reduce significativamente el tiempo y el esfuerzo necesarios para controlar el stock y realizar pedidos.</p>
+            <a href="inventarios-detalles.html" class="cta-button" aria-label="Ver más detalles del proyecto Sistema de Gestión de Inventarios">Ver más</a>
+        </div>
+        <!-- Puedes añadir más proyectos aquí -->
+    </section>
+
+    <!-- Sección de Donaciones -->
+    <section id="donations" class="donations-section">
+        <h2>Apóyame</h2>
+        <p>Buy me a coffee / Invítame un café: Si te gusta mi trabajo y quieres apoyarme, <a href="https://buymeacoffee.com/luisfmillay" target="_blank" rel="noopener noreferrer">comprarme un café</a>.</p>
+        <p>Support on Ko-fi / Apoyo en Ko-fi: También puedes apoyarme a través de <a href="https://ko-fi.com/luisfernandomillanrivera" target="_blank" rel="noopener noreferrer">Ko-fi</a>.</p>
+        <p>Donate with crypto / Dona con criptomonedas:</p>
+        <ul>
+            <li>Para donaciones en criptomonedas a través de la red BEP20 (Binance Smart Chain), puedes usar la siguiente dirección para USDT, ADA y ATOM: 0xc52523af42e2bf018cee5d31cd4d7bbb9d398fea.</li>
+        </ul>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <p>&copy; 2024 Luis Fernando Millan Rivera. Todos los derechos reservados.</p>
+        <nav class="footer-social">
+            <a href="https://twitter.com/luisfmillanr" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/fernando-dataanaliyst" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/Luisfmillanr" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </nav>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>
+
+

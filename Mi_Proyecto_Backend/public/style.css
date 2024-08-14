@@ -1,50 +1,66 @@
-/* Estilos globales */
+:root {
+    --primary-color: #1E90FF;
+    --secondary-color: #104E8B;
+    --light-bg-color: #F0F8FF;
+    --dark-bg-color: #333333;
+    --dark-bg-secondary-color: #444444;
+    --dark-text-color: #FFFFFF;
+    --light-text-color: #333333;
+    --border-radius: 5px;
+    --transition-speed: 0.3s;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    color: #333333; /* Color de texto por defecto */
-    background-color: #0E79B2; /* Fondo inicial */
+    color: var(--light-text-color);
+    background-color: var(--light-bg-color);
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves para modo oscuro/claro */
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 /* Modo oscuro */
 body.dark-mode {
-    background-color: #333333; /* Fondo oscuro */
-    color: #FFFFFF; /* Texto claro */
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
 }
 
-.dark-mode header, .dark-mode #about, .dark-mode #projects, .dark-mode #contact, .dark-mode footer {
-    background-color: #444444; /* Fondo oscuro para secciones */
-    color: #FFFFFF; /* Texto claro */
+.dark-mode header,
+.dark-mode .about-section,
+.dark-mode .crypto-section,
+.dark-mode .footer {
+    background-color: var(--dark-bg-secondary-color);
+    color: var(--dark-text-color);
 }
 
-.dark-mode .cta-button {
-    background-color: #555555; /* Botones más oscuros */
-    color: #FFFFFF;
+.dark-mode .cta-button,
+.dark-mode .theme-toggle {
+    background-color: var(--dark-bg-secondary-color);
+    color: var(--dark-text-color);
 }
 
-.dark-mode .cta-button:hover {
-    background-color: #777777; /* Hover en botones más claro */
-    color: #FFFFFF;
+.dark-mode .cta-button:hover,
+.dark-mode .theme-toggle:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-text-color);
 }
 
 .dark-mode .project-card {
-    background-color: #555555; /* Fondo oscuro en tarjetas de proyectos */
-    border-color: #666666; /* Bordes más claros */
+    background-color: var(--dark-bg-secondary-color);
+    border-color: var(--secondary-color);
 }
 
 .dark-mode footer {
-    background-color: #444444; /* Fondo oscuro en pie de página */
+    background-color: var(--dark-bg-secondary-color);
 }
 
 /* Tipografía de Títulos */
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    color: #1E90FF;
+    color: var(--primary-color);
     margin-bottom: 20px;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed) ease;
 }
 
 h1 {
@@ -61,102 +77,180 @@ h3 {
 
 /* Enlaces y Botones */
 a {
-    color: #1E90FF;
+    color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed) ease;
 }
 
 a:hover {
-    color: #104E8B;
+    color: var(--secondary-color);
 }
 
-.cta-button {
+.cta-button, .theme-toggle {
     display: inline-block;
     padding: 12px 24px;
     margin: 10px 5px;
-    background-color: #1E90FF;
-    color: #FFFFFF;
-    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--dark-text-color);
+    border-radius: var(--border-radius);
     text-align: center;
-    box-sizing: border-box; /* Para asegurar tamaños consistentes */
-    min-width: 200px; /* Asegurar que los botones tengan el mismo ancho mínimo */
-    text-align: center;
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 250px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
-.cta-button:hover {
-    background-color: #104E8B;
+.cta-button:hover, .theme-toggle:hover {
+    background-color: var(--secondary-color);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    color: #FFFFFF;
+    color: var(--dark-text-color);
+}
+
+/* Barra de Navegación */
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--dark-text-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.brand-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: var(--dark-text-color);
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list a {
+    font-size: 1rem;
+    color: var(--dark-text-color);
+    transition: color var(--transition-speed) ease;
+}
+
+.nav-list a:hover {
+    color: var(--secondary-color);
+}
+
+/* Botón de menú para dispositivos móviles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--dark-text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.menu-toggle:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: var(--primary-color);
+        border-radius: var(--border-radius);
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-list.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 
 /* Encabezado */
 header {
+    position: relative;
     text-align: center;
-    padding: 50px 20px;
-    background-color: #F0F8FF;
-    color: #333333;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 60px 20px;
+    background: url(/Mi_Proyecto_Backend/public/images/Banner1.webp) no-repeat center center/cover;
+    color: var(--light-text-color);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Superposición de color con opacidad */
+    z-index: 1;
+}
+
+header .header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 header p {
     font-size: 1.2rem;
     margin: 20px 0;
-}
-
-/* Botón para cambiar modo claro/oscuro */
-.theme-toggle {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #1E90FF;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    min-width: 200px; /* Asegurar que el botón sea consistente en tamaño */
-}
-
-.theme-toggle:hover {
-    background-color: #104E8B;
-    color: #FFFFFF;
-}
-
-/* Margen sobre secciones */
-section {
-    padding: 60px 20px;
-    margin-bottom: 50px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #ffffff; /* Asegurar que el texto sea visible */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente para mayor legibilidad */
+    padding: 10px;
+    border-radius: var(--border-radius);
 }
 
 /* Sección Sobre Mí */
-#about {
+.about-section {
     padding: 50px 20px;
-    background-color: #FFFFFF;
-    color: #333333;
+    background-color: var(--light-bg-color);
+    color: var(--light-text-color);
 }
 
-/* Sección Proyectos */
+/* Sección de Proyectos */
 #projects {
     padding: 50px 20px;
     background-color: #F7F7F7;
-    color: #333333;
+    color: var(--light-text-color);
 }
 
 .project-card {
-    background-color: #FFFFFF;
+    background-color: var(--light-bg-color);
     border: 1px solid #DDDDDD;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     padding: 25px;
     margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    transition: transform var(--transition-speed) ease, box-shadow var (--transition-speed) ease, background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
 .project-card img {
     max-width: 100%;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
 }
 
 .project-card h3 {
@@ -172,7 +266,7 @@ section {
 .project-card a {
     display: inline-block;
     margin-top: 10px;
-    color: #1E90FF;
+    color: var(--primary-color);
     text-decoration: underline;
 }
 
@@ -181,84 +275,81 @@ section {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Sección Precios de Criptomonedas */
-#crypto-prices {
+/* Sección de Precios de Criptomonedas */
+.crypto-section {
     padding: 50px 20px;
-    background-color: #FFFFFF;
-    color: #333333;
-    text-align: center;
-}
-
-/* Sección Donaciones */
-#donations {
-    padding: 50px 20px;
-    background-color: #F0F8FF;
-    color: #333333;
+    background-color: var(--light-bg-color);
+    color: var(--light-text-color);
     text-align: center;
 }
 
 /* Sección Contacto */
-#contact {
-    padding: 50px 20px;
-    background-color: #FFFFFF;
-    color: #333333;
+#contact form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-form label {
-    display: block;
+#contact label {
+    width: 100%;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-form input, form textarea {
-    width: 100%;
-    max-width: 100%;
+#contact input, #contact textarea {
+    width: 48%;
     box-sizing: border-box;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #CCCCCC;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
 }
 
-form button {
+#contact textarea {
+    width: 100%;
+}
+
+#contact button {
     padding: 10px 20px;
-    background-color: #1E90FF;
-    color: #FFFFFF;
+    background-color: var(--primary-color);
+    color: var(--dark-text-color);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-speed) ease;
+    align-self: flex-start; /* Alineación izquierda del botón */
 }
 
-form button:hover {
-    background-color: #104E8B;
+#contact button:hover {
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    #contact input, #contact textarea {
+        width: 100%; /* En pantallas pequeñas, los inputs y textarea ocupan todo el ancho */
+    }
 }
 
 /* Pie de Página */
-footer {
+.footer {
     padding: 20px;
     text-align: center;
-    background-color: #F0F8FF;
-    color: #333333;
-}
-
-footer nav a {
-    margin: 0 10px;
-    color: #1E90FF;
+    background-color: var(--light-bg-color);
+    color: var(--light-text-color);
 }
 
 .footer-social a {
     margin: 0 10px;
-    color: #1E90FF;
+    color: var(--primary-color);
     font-size: 1.5rem;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed) ease;
 }
 
 .footer-social a:hover {
-    color: #104E8B;
+    color: var(--secondary-color);
 }
 
-/* Responsive moviles */
+/* Responsive */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
@@ -268,7 +359,7 @@ footer nav a {
         font-size: 1rem;
     }
 
-    .cta-button {
+    .cta-button, .theme-toggle {
         padding: 10px 20px;
         font-size: 1rem;
     }
@@ -282,6 +373,9 @@ footer nav a {
         font-size: 1rem;
     }
 }
+
+
+
 
 
 
