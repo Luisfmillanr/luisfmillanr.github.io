@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="El proceso técnico de construir este sitio web con HTML, CSS y publicarlo en GitHub Pages." />
+  <title>Cómo construí y publiqué este sitio web — Luis Fernando Millán Rivera</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="index.html" class="nav-logo">Luis<span>Millán</span></a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#que-hago">Qué hago</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="articulos.html" class="active">Artículos</a></li>
+          <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
+        </ul>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar modo oscuro/claro">
+            <span class="icon-moon">🌙</span>
+            <span class="icon-sun">☀️</span>
+          </button>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="container--narrow">
+      <header class="article-header">
+        <span class="label">Artículo 03 · Desarrollo web</span>
+        <h1 class="article-title">
+          Cómo construí y publiqué este sitio web
+        </h1>
+        <div class="article-meta">
+          <span>Luis Fernando Millán Rivera</span>
+          <span class="article-meta-sep"></span>
+          <span>Lectura: 6 min</span>
+          <span class="article-meta-sep"></span>
+          <span>2025</span>
+        </div>
+      </header>
+    </div>
+
+    <div class="container--narrow">
+      <figure class="article-figure" style="margin-top: 0;">
+        <img
+          class="article-cover"
+          src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=1400&q=80"
+          alt="Editor de código con HTML y CSS en pantalla"
+        />
+        <figcaption>HTML, CSS y GitHub Pages — las tres herramientas base de este sitio</figcaption>
+      </figure>
+    </div>
+
+    <article class="article-body">
+      <div class="container--narrow">
+
+        <p>
+          Este sitio fue construido como un proyecto web estático, usando
+          HTML para definir la estructura, CSS para el diseño visual y
+          GitHub Pages para publicarlo en línea de forma gratuita. En este
+          artículo explico el proceso completo: desde la planificación del
+          contenido hasta la publicación final.
+        </p>
+
+        <h2>Por dónde empezar: el contenido antes que el código</h2>
+        <p>
+          El error más común al construir un sitio web es empezar escribiendo
+          código antes de saber qué va a decir el sitio. El resultado es
+          un diseño bonito con textos de relleno que después hay que adaptar,
+          muchas veces rompiendo lo que ya estaba hecho.
+        </p>
+        <p>
+          En este caso, el primer paso fue definir el mensaje central:
+        </p>
+        <blockquote>
+          Consultor tecnológico enfocado en la mejora de procesos mediante
+          soluciones digitales.
+        </blockquote>
+        <p>
+          Con esa frase como brújula, se definió la estructura de páginas,
+          el contenido de cada sección y los tres artículos antes de escribir
+          una sola línea de HTML.
+        </p>
+
+        <h2>La estructura de archivos</h2>
+        <p>
+          Un sitio estático bien organizado tiene todos sus archivos en la
+          raíz del repositorio, con nombres claros y sin espacios:
+        </p>
+
+        <!-- Bloque de código — muestra la estructura real del proyecto -->
+        <pre><code>luisfmillanr.github.io/
+├── index.html
+├── proyectos.html
+├── articulos.html
+├── contacto.html
+├── articulo-procesos-tecnologia.html
+├── articulo-procesos-manuales-digitales.html
+├── articulo-como-construi-el-sitio.html
+├── styles.css
+├── app.js
+└── assets/
+    └── img/</code></pre>
+
+        <p>
+          Todo en la raíz porque GitHub Pages sirve el sitio desde ahí.
+          Si los archivos HTML estuvieran en subcarpetas, las rutas relativas
+          se complicarían sin necesidad.
+        </p>
+
+        <h2>HTML: estructura antes que presentación</h2>
+
+        <figure class="article-figure">
+          <img
+            src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1000&q=80"
+            alt="Código HTML en pantalla de computador"
+          />
+          <figcaption>HTML define qué es cada cosa, no cómo se ve</figcaption>
+        </figure>
+
+        <p>
+          HTML — <em>HyperText Markup Language</em> — es el lenguaje que
+          define la estructura de una página web. No controla colores ni
+          tamaños; solo describe qué es cada elemento: un título, un párrafo,
+          una sección, un enlace.
+        </p>
+        <p>
+          La decisión más importante en HTML es usar las etiquetas correctas
+          según su significado semántico. Por ejemplo:
+        </p>
+        <ul>
+          <li><code>&lt;nav&gt;</code> para la barra de navegación</li>
+          <li><code>&lt;main&gt;</code> para el contenido principal</li>
+          <li><code>&lt;article&gt;</code> para contenido independiente como este</li>
+          <li><code>&lt;section&gt;</code> para agrupar contenido temático</li>
+          <li><code>&lt;footer&gt;</code> para el pie de página</li>
+        </ul>
+        <p>
+          Usar las etiquetas correctas mejora la accesibilidad, ayuda a los
+          motores de búsqueda y hace el código más fácil de mantener.
+        </p>
+
+        <h2>CSS: diseño con variables y un solo archivo</h2>
+        <p>
+          CSS — <em>Cascading Style Sheets</em> — controla todo lo visual:
+          colores, tipografía, espaciado, layout y adaptación a diferentes
+          tamaños de pantalla.
+        </p>
+        <p>
+          Una de las decisiones más importantes fue usar
+          <strong>variables CSS</strong> para todos los valores que se repiten:
+        </p>
+
+        <pre><code>:root {
+  --color-accent:  #0F766E;
+  --font-display:  'Syne', sans-serif;
+  --space-6:       1.5rem;
+}</code></pre>
+
+        <p>
+          Esto permite cambiar el color de acento en un solo lugar y que
+          el cambio se propague automáticamente a todo el sitio. Sin variables,
+          habría que buscar y reemplazar en cientos de líneas.
+        </p>
+
+        <h3>Modo oscuro y claro</h3>
+        <p>
+          El sitio incluye soporte completo para modo oscuro y claro,
+          con tres capas de lógica:
+        </p>
+        <ol>
+          <li><strong>Media query del sistema</strong> — detecta si el SO está en modo oscuro</li>
+          <li><strong>Clase <code>body.dark</code></strong> — fuerza el modo oscuro manualmente</li>
+          <li><strong>Clase <code>body.light</code></strong> — fuerza el modo claro aunque el sistema esté en oscuro</li>
+        </ol>
+
+        <h3>Diseño responsive</h3>
+        <p>
+          El sitio se adapta a móviles mediante media queries que reorganizan
+          el layout cuando la pantalla es menor a 768px. Las grillas de tres
+          columnas pasan a una columna, el menú se convierte en hamburguesa
+          y los tamaños de fuente escalan con <code>clamp()</code>.
+        </p>
+
+        <h2>JavaScript mínimo</h2>
+        <p>
+          El sitio usa JavaScript solo para dos funciones: el menú hamburguesa
+          en móvil y el toggle de modo oscuro/claro. Todo el resto es HTML y CSS puro.
+        </p>
+        <p>
+          El archivo <code>app.js</code> se carga al final del
+          <code>&lt;body&gt;</code>, no en el <code>&lt;head&gt;</code>.
+          La razón es simple: el navegador lee el HTML de arriba hacia abajo.
+          Si el script se ejecuta antes de que existan los botones que busca,
+          falla en silencio.
+        </p>
+
+        <h2>Publicación en GitHub Pages</h2>
+        <p>
+          GitHub Pages permite publicar un sitio web estático directamente
+          desde un repositorio de GitHub, de forma gratuita y con una URL
+          en el formato <code>usuario.github.io</code>.
+        </p>
+        <p>
+          El proceso de publicación se reduce a tres comandos que se repiten
+          cada vez que se hacen cambios:
+        </p>
+        <pre><code>git add .
+git commit -m "descripción del cambio"
+git push origin main</code></pre>
+
+        <p>
+          Después de un <code>push</code>, GitHub Pages detecta los cambios
+          automáticamente y publica la nueva versión en segundos.
+        </p>
+
+        <h2>Lo que aprendí en el proceso</h2>
+        <p>
+          Construir este sitio fue un ejercicio de tomar decisiones de diseño
+          con criterio, no solo de escribir código que funcione. Las decisiones
+          más importantes no fueron técnicas, sino de contenido y comunicación:
+          qué decir, cómo estructurarlo y por qué cada sección existe.
+        </p>
+        <p>
+          La lección más valiosa: un sitio web no debe impresionar al developer
+          que lo construyó, sino comunicar con claridad a quien lo visita.
+        </p>
+
+      </div>
+    </article>
+
+    <div class="container--narrow">
+      <nav class="article-nav" aria-label="Navegación entre artículos">
+        <div class="article-nav-item">
+          <p class="article-nav-label">← Anterior</p>
+          <a href="articulo-procesos-manuales-digitales.html" class="article-nav-title">
+            De procesos manuales a soluciones digitales
+          </a>
+        </div>
+        <div class="article-nav-item article-nav-item--next">
+          <p class="article-nav-label">Volver</p>
+          <a href="articulos.html" class="article-nav-title">
+            Ver todos los artículos
+          </a>
+        </div>
+      </nav>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Luis<span>Millán</span></span>
+      <nav class="footer-links" aria-label="Links del footer">
+        <a href="proyectos.html">Proyectos</a>
+        <a href="articulos.html">Artículos</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <span class="footer-copy">© 2025 Luis Fernando Millán Rivera</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

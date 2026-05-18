@@ -1,96 +1,556 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<!--
+  <head> — Lo que el navegador necesita saber pero el usuario no ve directamente:
+  - charset: cómo interpretar caracteres (tildes, ñ)
+  - viewport: cómo escalar en móvil
+  - description: lo que aparece en Google
+  - title: lo que aparece en la pestaña del navegador
+  - link rel="stylesheet": enlaza nuestro CSS
+-->
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio de Luis Fernando Millan Rivera, un programador apasionado por crear soluciones innovadoras y optimización de procesos tecnológicos.">
-    <title>Luis Fernando Millan Rivera - Programador</title>
-
-    <!-- Fuentes de Iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- Fuentes de Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Archivo CSS -->
-    <link rel="stylesheet" href="/Mi_Proyecto_Backend/public/style.css">
-    <link rel="icon" href="/Mi_Proyecto_Backend/public/images/menulines.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Luis Fernando Millán Rivera — Consultor tecnológico enfocado en la mejora de procesos mediante soluciones digitales." />
+  <title>Luis Fernando Millán Rivera — Consultor Tecnológico</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <!-- Barra de Navegación -->
-    <nav class="navbar" id="main-navigation">
-        <div class="navbar-container">
-            <a href="index.html" class="brand-logo">Luis Fernando Millan Rivera</a>
-            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navigation">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
-            <ul class="nav-list">
-                <li><a href="index.html#about">Sobre Mí</a></li>
-                <li><a href="proyectos.html">Proyectos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                <i id="theme-icon" class="fas fa-moon"></i>
-            </button>            
-        </div>
-    </nav>
 
-    <!-- Encabezado -->
-    <header class="main-header">
-        <div class="header-content">
-            <h1>Soy Luis Fernando Millan Rivera, un programador apasionado por crear soluciones innovadoras.</h1>
-            <p>Descubre mis proyectos y cómo puedo ayudarte a transformar ideas en realidad.</p>
-            <div class="header-buttons">
-                <a href="proyectos.html" class="cta-button">Explora mis proyectos</a>
-                <a href="contacto.html" class="cta-button">Contáctame</a>
-            </div>
-        </div>
-    </header>
+  <!-- ============================================================
+       NAVEGACIÓN
+       position: sticky en el CSS — se queda pegada al hacer scroll.
+       El botón .nav-toggle es el "hamburguesa" para móvil.
+       El botón .theme-toggle activa/desactiva el modo oscuro.
+       app.js controlará ambos botones con JavaScript.
+       ============================================================ -->
+  <header>
+    <nav class="nav">
+      <div class="container nav-inner">
 
-    <!-- Sobre Mí -->
-    <section id="about" class="about-section">
-        <h2>Sobre Mí</h2>
-        <p>Desde joven, siempre he sentido una gran curiosidad por la tecnología y la programación. Mi viaje comenzó con la reparación de equipos y trabajos como soporte e instalación de redes. Con el tiempo, descubrí mi pasión por el desarrollo de software, y desde entonces, he trabajado en numerosos proyectos que buscan mejorar la vida de las personas a través de soluciones tecnológicas. Estoy comprometido con la innovación y la creación de herramientas que faciliten el acceso a la tecnología y resuelvan problemas complejos de manera eficiente.</p>
-        <p>Mis habilidades abarcan diversas tecnologías, incluyendo Java, Python, HTML, CSS, JavaScript, y más. Tengo una sólida experiencia en el desarrollo de aplicaciones web, análisis de datos y optimización de procesos mediante automatización. Además, me especializo en sistemas operativos avanzados y redes, lo que me permite abordar proyectos desde múltiples ángulos.</p>
-    </section>
+        <!-- Logo: tu nombre abreviado, enlaza al inicio -->
+        <a href="index.html" class="nav-logo">
+          Luis<span>Millán</span>
+        </a>
 
-    <!-- Sección de Precios de Criptomonedas -->
-    <section id="crypto-prices" class="crypto-section">
-        <h2>Precios de Criptomonedas</h2>
-        <p>Bitcoin: <span id="bitcoin-price" aria-live="polite">Cargando...</span></p>
-        <p>Ethereum: <span id="ethereum-price" aria-live="polite">Cargando...</span></p>
-        <p>Binance Coin (BNB): <span id="bnb-price" aria-live="polite">Cargando...</span></p>
-    </section>
-
-    <!-- Sección de Donaciones -->
-    <section id="donations" class="donations-section">
-        <h2>Apóyame</h2>
-        <p>Buy me a coffee / Invítame un café: Si te gusta mi trabajo y quieres apoyarme, <a href="https://buymeacoffee.com/luisfmillay" target="_blank">comprarme un café</a>.</p>
-        <p>Support on Ko-fi / Apoyo en Ko-fi: También puedes apoyarme a través de <a href="https://ko-fi.com/luisfernandomillanrivera" target="_blank">Ko-fi</a>.</p>
-        <p>Donate with crypto / Dona con criptomonedas:</p>
-        <ul>
-            <li>Para donaciones en criptomonedas a través de la red BEP20 (Binance Smart Chain), puedes usar la siguiente dirección para USDT, ADA y ATOM: 0xc52523af42e2bf018cee5d31cd4d7bbb9d398fea.</li>
+        <!-- Enlaces de navegación -->
+        <!-- La clase "active" marca la página actual -->
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="index.html#que-hago">Qué hago</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="articulos.html">Artículos</a></li>
+          <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
         </ul>
+
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <!-- Toggle modo oscuro/claro -->
+          <!-- Los íconos son emojis simples; el CSS los muestra u oculta según el modo -->
+          <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar modo oscuro/claro">
+            <span class="icon-moon">🌙</span>
+            <span class="icon-sun">☀️</span>
+          </button>
+
+          <!-- Botón hamburguesa para móvil -->
+          <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- ============================================================
+       CONTENIDO PRINCIPAL
+       <main> le dice al navegador (y a lectores de pantalla)
+       que aquí está el contenido central de la página.
+       ============================================================ -->
+  <main>
+
+    <!-- ============================================================
+         HERO — Primera sección visible
+         Define la primera impresión. Tiene que responder en 5 segundos:
+         quién eres y qué valor entregas.
+         La clase "section" da el padding vertical definido en el CSS.
+         ============================================================ -->
+    <section class="hero section" id="inicio">
+      <div class="container">
+        <div class="hero-content">
+
+          <!-- Píldora pequeña con contexto profesional -->
+          <div class="hero-tag">Consultor Tecnológico</div>
+
+          <!-- Título principal -->
+          <!-- <em> dentro del h1 aplica el color teal definido en .hero h1 em -->
+          <h1>
+            Luis Fernando<br>
+            <em>Millán Rivera</em>
+          </h1>
+
+          <!-- Bajada — explica qué problema resuelves -->
+          <p class="lead">
+            Ayudo a analizar, ordenar e implementar soluciones tecnológicas
+            que convierten procesos complejos en flujos de trabajo más
+            claros, eficientes y aplicables.
+          </p>
+
+          <!-- Botones de acción -->
+          <!-- El orden importa: la acción principal va primero -->
+          <div class="hero-actions">
+            <a href="proyectos.html" class="btn btn-primary">Ver proyectos</a>
+            <a href="articulos.html" class="btn btn-secondary">Leer artículos</a>
+            <a href="contacto.html" class="btn btn-secondary">Contactar</a>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <!-- Pie de Página -->
-    <footer class="footer">
-        <p>&copy; 2024 Luis Fernando Millan Rivera. Todos los derechos reservados.</p>
-        <nav class="footer-social">
-            <a href="https://twitter.com/luisfmillanr" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://linkedin.com/in/fernando-dataanaliyst" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/Luisfmillanr" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        </nav>
-    </footer>
 
-    <script src="app.js" defer></script>
+    <!-- ============================================================
+         SOBRE MÍ
+         id="sobre-mi" permite enlazar directo a esta sección
+         desde el nav o desde otros archivos con index.html#sobre-mi
+         ============================================================ -->
+    <section class="section bg-white" id="sobre-mi">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- Columna izquierda: texto -->
+          <div class="about-text">
+            <span class="label">Sobre mí</span>
+            <h2>Tecnología al servicio<br>de procesos y personas</h2>
+
+            <p>
+              Mi trabajo se centra en conectar tecnología, procesos y personas.
+              Me interesa comprender cómo funcionan los flujos de trabajo,
+              detectar oportunidades de mejora y proponer soluciones digitales
+              que sean claras, sostenibles y fáciles de adoptar.
+            </p>
+            <p>
+              Más que enfocarme solo en programar, busco entender el problema
+              completo: qué se necesita mejorar, quiénes participan, qué
+              herramientas existen y cómo implementar una solución útil en un
+              contexto real.
+            </p>
+
+            <!-- Habilidades como píldoras visuales -->
+            <div class="skills-list" style="margin-top: 1.5rem;">
+              <span class="skill-pill">Análisis de procesos</span>
+              <span class="skill-pill">Soluciones digitales</span>
+              <span class="skill-pill">HTML & CSS</span>
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">GitHub Pages</span>
+              <span class="skill-pill">Documentación</span>
+              <span class="skill-pill">Adopción tecnológica</span>
+            </div>
+          </div>
+
+          <!-- Columna derecha: datos destacados -->
+          <div class="about-sidebar">
+            <div class="stat-card">
+              <div class="stat-card-number">3+</div>
+              <div class="stat-card-label">Proyectos de análisis e implementación</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-number">5</div>
+              <div class="stat-card-label">Pasos en mi método de trabajo</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-number">1</div>
+              <div class="stat-card-label">Objetivo: soluciones que se usen de verdad</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         QUÉ HAGO
+         id="que-hago" permite el enlace del nav: index.html#que-hago
+         grid-3 aplica las tres columnas definidas en el CSS.
+         ============================================================ -->
+    <section class="section" id="que-hago">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="label">Áreas de trabajo</span>
+          <h2>¿En qué puedo ayudarte?</h2>
+          <p>
+            Trabajo en la intersección entre tecnología, procesos y personas.
+            Mi enfoque no es solo técnico: es identificar qué se necesita mejorar
+            y construir una solución que funcione en la práctica.
+          </p>
+        </div>
+
+        <div class="grid-3">
+
+          <!-- Tarjeta 1 -->
+          <div class="card">
+            <div class="card-body">
+              <!-- Ícono representativo con emoji — simple y sin dependencias -->
+              <div style="font-size: 2rem; margin-bottom: 1rem;">🔍</div>
+              <h3>Análisis y mejora de procesos</h3>
+              <p>
+                Observo cómo se realizan las tareas, identifico pasos repetidos,
+                puntos de fricción y oportunidades para ordenar mejor el trabajo.
+              </p>
+              <p style="font-size: 0.85rem; font-style: italic; color: var(--color-text-lt);">
+                Un proceso que depende de mensajes, planillas y tareas manuales
+                puede transformarse en un flujo más claro y controlado.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div class="card">
+            <div class="card-body">
+              <div style="font-size: 2rem; margin-bottom: 1rem;">⚙️</div>
+              <h3>Implementación de soluciones digitales</h3>
+              <p>
+                Ayudo a convertir una necesidad o idea en una solución concreta,
+                usando herramientas digitales que puedan ser utilizadas
+                en la práctica.
+              </p>
+              <p style="font-size: 0.85rem; font-style: italic; color: var(--color-text-lt);">
+                Desde un formulario o automatización hasta una herramienta
+                interna para organizar información.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3 -->
+          <div class="card">
+            <div class="card-body">
+              <div style="font-size: 2rem; margin-bottom: 1rem;">📚</div>
+              <h3>Educación y adopción tecnológica</h3>
+              <p>
+                Acompaño el uso de nuevas herramientas mediante explicaciones
+                claras, documentación y apoyo para que la tecnología sea
+                comprendida y adoptada.
+              </p>
+              <p style="font-size: 0.85rem; font-style: italic; color: var(--color-text-lt);">
+                Una solución no termina cuando funciona técnicamente; termina
+                cuando las personas pueden usarla con confianza.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         MÉTODO DE TRABAJO
+         Los números 01, 02... los genera el CSS automáticamente
+         con counter-increment. No están escritos en el HTML.
+         ============================================================ -->
+    <section class="section bg-white" id="metodo">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="label">Cómo trabajo</span>
+          <h2>Un proceso claro de inicio a fin</h2>
+          <p>
+            Un proceso simple para pasar de una necesidad confusa
+            a una solución aplicable.
+          </p>
+        </div>
+
+        <!-- Los números son automáticos gracias a counter-reset en el CSS -->
+        <div class="method-steps">
+
+          <div class="method-step">
+            <div class="method-step-content">
+              <h4>Entender</h4>
+              <p>Comprender el problema, el contexto y las personas involucradas.</p>
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-step-content">
+              <h4>Ordenar</h4>
+              <p>Identificar tareas, herramientas, información disponible y puntos de mejora.</p>
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-step-content">
+              <h4>Diseñar</h4>
+              <p>Proponer una solución clara, viable y ajustada a la necesidad real.</p>
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-step-content">
+              <h4>Implementar</h4>
+              <p>Construir, configurar o documentar la solución usando herramientas digitales.</p>
+            </div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-step-content">
+              <h4>Acompañar</h4>
+              <p>Facilitar el uso mediante explicación, documentación y mejora continua.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         PROYECTOS DESTACADOS
+         Mostramos solo los 3 proyectos con enlace a proyectos.html
+         para ver el detalle completo.
+         ============================================================ -->
+    <section class="section" id="proyectos">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="label">Proyectos</span>
+          <h2>Casos de trabajo</h2>
+          <p>
+            Proyectos que representan ejercicios reales de análisis,
+            organización e implementación de soluciones digitales.
+          </p>
+        </div>
+
+        <div class="grid-3">
+
+          <!-- Proyecto 1 -->
+          <div class="card">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">Python · SQLite</span>
+              </div>
+              <h3>Sistema de gestión de inventarios</h3>
+              <div class="project-detail">
+                <div class="project-detail-item">
+                  <span class="project-detail-label">Problema</span>
+                  <span class="project-detail-value">Necesidad de ordenar productos, stock y registros de forma clara.</span>
+                </div>
+                <div class="project-detail-item">
+                  <span class="project-detail-label">Solución</span>
+                  <span class="project-detail-value">Herramienta para registrar, consultar y organizar información.</span>
+                </div>
+              </div>
+              <a href="proyectos.html" class="btn-link">Ver detalle</a>
+            </div>
+          </div>
+
+          <!-- Proyecto 2 -->
+          <div class="card">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">Java · API</span>
+              </div>
+              <h3>Conversor de monedas</h3>
+              <div class="project-detail">
+                <div class="project-detail-item">
+                  <span class="project-detail-label">Problema</span>
+                  <span class="project-detail-value">Conversión de divisas con datos actualizados y resultado claro.</span>
+                </div>
+                <div class="project-detail-item">
+                  <span class="project-detail-label">Solución</span>
+                  <span class="project-detail-value">Aplicación que consulta información externa y presenta resultados ordenados.</span>
+                </div>
+              </div>
+              <a href="proyectos.html" class="btn-link">Ver detalle</a>
+            </div>
+          </div>
+
+          <!-- Proyecto 3 -->
+          <div class="card">
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">HTML · CSS · GitHub Pages</span>
+              </div>
+              <h3>Rediseño de sitio personal</h3>
+              <div class="project-detail">
+                <div class="project-detail-item">
+                  <span class="project-detail-label">Problema</span>
+                  <span class="project-detail-value">El sitio anterior no representaba el perfil consultivo actual.</span>
+                </div>
+                <div class="project-detail-item">
+                  <span class="project-detail-label">Solución</span>
+                  <span class="project-detail-value">Rediseño completo con mensaje claro, secciones y artículos.</span>
+                </div>
+              </div>
+              <a href="proyectos.html" class="btn-link">Ver detalle</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Enlace a todos los proyectos -->
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="proyectos.html" class="btn btn-secondary">Ver todos los proyectos</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         ARTÍCULOS DESTACADOS
+         Tres tarjetas que enlazan a cada artículo individual.
+         Las imágenes usan src con ruta relativa a assets/img/
+         Si no hay imagen propia, se puede usar una URL de Unsplash
+         temporalmente.
+         ============================================================ -->
+    <section class="section bg-accent" id="articulos">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="label">Artículos</span>
+          <h2>Reflexiones y aprendizajes</h2>
+          <p>
+            Sobre tecnología aplicada, mejora de procesos,
+            soluciones digitales y desarrollo web.
+          </p>
+        </div>
+
+        <div class="grid-3">
+
+          <!-- Artículo 1 -->
+          <div class="card">
+            <!-- Imagen: reemplaza la URL por una imagen propia cuando tengas -->
+            <img
+              class="card-image"
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80"
+              alt="Tecnología y procesos de trabajo"
+            />
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">Procesos</span>
+              </div>
+              <h3>Tecnología aplicada a la mejora de procesos</h3>
+              <p>
+                Cómo la tecnología tiene más valor cuando se usa para resolver
+                problemas reales, no solo por tendencia.
+              </p>
+              <a href="articulo-procesos-tecnologia.html" class="btn-link">Leer artículo</a>
+            </div>
+          </div>
+
+          <!-- Artículo 2 -->
+          <div class="card">
+            <img
+              class="card-image"
+              src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80"
+              alt="Digitalización de procesos manuales"
+            />
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">Digitalización</span>
+              </div>
+              <h3>De procesos manuales a soluciones digitales</h3>
+              <p>
+                Digitalizar no es copiar lo manual a una pantalla.
+                Es ordenar, mejorar y facilitar el trabajo real.
+              </p>
+              <a href="articulo-procesos-manuales-digitales.html" class="btn-link">Leer artículo</a>
+            </div>
+          </div>
+
+          <!-- Artículo 3 -->
+          <div class="card">
+            <img
+              class="card-image"
+              src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800&q=80"
+              alt="Construcción de sitio web con HTML y CSS"
+            />
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">Desarrollo web</span>
+              </div>
+              <h3>Cómo construí y publiqué este sitio web</h3>
+              <p>
+                El proceso técnico de crear este sitio con HTML, CSS
+                y publicarlo en GitHub Pages desde cero.
+              </p>
+              <a href="articulo-como-construi-el-sitio.html" class="btn-link">Leer artículo</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="articulos.html" class="btn btn-primary">Ver todos los artículos</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         LLAMADA A CONTACTO (CTA — Call To Action)
+         Sección simple que cierra la página con una invitación
+         a conversar. No tiene formulario — ese va en contacto.html
+         ============================================================ -->
+    <section class="section" id="contacto-cta">
+      <div class="container" style="text-align: center; max-width: 640px;">
+        <span class="label">Contacto</span>
+        <h2 style="margin-top: 0.75rem; margin-bottom: 1rem;">
+          ¿Tienes un proceso que mejorar?
+        </h2>
+        <p class="lead" style="margin-bottom: 2rem;">
+          Puedes contactarme para conversar sobre proyectos, mejora de
+          procesos o soluciones digitales.
+        </p>
+        <a href="contacto.html" class="btn btn-primary">Conversemos</a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       Cierre del sitio con logo, links y crédito.
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <span class="footer-logo">Luis<span>Millán</span></span>
+
+      <nav class="footer-links" aria-label="Links del footer">
+        <a href="proyectos.html">Proyectos</a>
+        <a href="articulos.html">Artículos</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <span class="footer-copy">
+        © 2025 Luis Fernando Millán Rivera
+      </span>
+
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       Va al final del <body>, no en el <head>.
+       ¿Por qué? Porque el navegador carga el HTML de arriba a abajo.
+       Si el script está en el <head>, se ejecuta antes de que
+       existan los elementos del HTML, y document.querySelector()
+       devolvería null. Al final del body, todo el HTML ya existe.
+       ============================================================ -->
+  <script src="app.js"></script>
+
 </body>
-
 </html>
 
 

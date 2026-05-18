@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Artículos de Luis Fernando Millán Rivera sobre tecnología aplicada, mejora de procesos y desarrollo web." />
+  <title>Artículos — Luis Fernando Millán Rivera</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="index.html" class="nav-logo">Luis<span>Millán</span></a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#que-hago">Qué hago</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="articulos.html" class="active">Artículos</a></li>
+          <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
+        </ul>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar modo oscuro/claro">
+            <span class="icon-moon">🌙</span>
+            <span class="icon-sun">☀️</span>
+          </button>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section--sm bg-white">
+      <div class="container--narrow" style="text-align: center; padding-block: 3rem 1rem;">
+        <span class="label">Bitácora</span>
+        <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-top: 0.75rem; margin-bottom: 1rem;">
+          Artículos
+        </h1>
+        <p class="lead" style="margin-inline: auto; max-width: 52ch;">
+          Reflexiones y aprendizajes sobre tecnología aplicada, mejora de
+          procesos, soluciones digitales y desarrollo web.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-3">
+
+          <div class="card">
+            <img
+              class="card-image"
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80"
+              alt="Circuito tecnológico representando la conexión entre tecnología y procesos"
+            />
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">Procesos</span>
+                <span style="font-size: 0.75rem; color: var(--color-text-lt);">4 min</span>
+              </div>
+              <h2 class="card" style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: var(--font-display); color: var(--color-text);">
+                Tecnología aplicada a la mejora de procesos
+              </h2>
+              <p>
+                Cómo la tecnología tiene más valor cuando se usa para resolver
+                problemas reales, no solo por tendencia o moda.
+              </p>
+              <a href="articulo-procesos-tecnologia.html" class="btn-link">Leer artículo</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <img
+              class="card-image"
+              src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80"
+              alt="Persona trabajando en un proceso de transformación digital"
+            />
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">Digitalización</span>
+                <span style="font-size: 0.75rem; color: var(--color-text-lt);">5 min</span>
+              </div>
+              <h2 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: var(--font-display); color: var(--color-text);">
+                De procesos manuales a soluciones digitales
+              </h2>
+              <p>
+                Digitalizar no es copiar lo manual a una pantalla.
+                Es ordenar, mejorar y facilitar el trabajo real.
+              </p>
+              <a href="articulo-procesos-manuales-digitales.html" class="btn-link">Leer artículo</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <img
+              class="card-image"
+              src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800&q=80"
+              alt="Editor de código con HTML y CSS en pantalla"
+            />
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-tag">Desarrollo web</span>
+                <span style="font-size: 0.75rem; color: var(--color-text-lt);">6 min</span>
+              </div>
+              <h2 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: var(--font-display); color: var(--color-text);">
+                Cómo construí y publiqué este sitio web
+              </h2>
+              <p>
+                El proceso técnico de crear este sitio con HTML, CSS
+                y publicarlo en GitHub Pages desde cero.
+              </p>
+              <a href="articulo-como-construi-el-sitio.html" class="btn-link">Leer artículo</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Luis<span>Millán</span></span>
+      <nav class="footer-links" aria-label="Links del footer">
+        <a href="proyectos.html">Proyectos</a>
+        <a href="articulos.html">Artículos</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <span class="footer-copy">© 2025 Luis Fernando Millán Rivera</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
